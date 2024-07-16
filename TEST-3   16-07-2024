@@ -1,0 +1,37 @@
+PROGRAM 1
+
+interface shape {
+void draw();
+}
+class circle implements shape {
+public void draw() {
+system.out.println("Drawing circle");
+}
+}
+public class main {
+public static void main(string[] args) {
+shape shape=new circle();
+shape.draw();
+}
+}
+
+PROGRAM 2
+
+
+interface animal {
+void eat();
+void sleep();
+class dog implement animal {
+public void eat(){
+system.out.println("animal is eating");
+}
+public void sleep(){
+system.out.println("sleeping");
+}
+public class main {
+public static void main(string[] args) {
+animal dog=new dog();
+dog.eat();
+dog.sleep();
+}
+}
