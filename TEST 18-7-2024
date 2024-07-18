@@ -1,0 +1,32 @@
+PROGRAM 1
+
+
+public class ArrayExceptionExample {
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3};
+        try {
+            System.out.println(numbers[5]); 
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Error");
+        }
+    }
+}
+
+
+
+PROGRAM 2
+
+
+public class Exceptionhandling{
+public static void main(String [] args) {
+try{
+int=divide number(10,0);
+System.out.println("Result:" + result);
+} catch (Arithmetic Expression e) {
+System.out.println("Error:Division by zero is not allowed");
+}
+}
+public static int divide number (int dividend, int divisor){
+return dividend/divisor;
+}
+}
