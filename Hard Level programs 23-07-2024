@@ -1,0 +1,110 @@
+PROGRAM 1
+
+import java.util.Scanner;
+public class DaysConverter {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the number of days: ");
+        int days = input.nextInt();
+        int years = days / 365;
+        int remainingDays = days % 365;
+        int weeks = remainingDays / 7;
+        int finalDays = remainingDays % 7;
+        System.out.println(days + " days = " + years + " years, " + weeks + " weeks, and " + finalDays + " days.");
+    }
+}
+
+
+PROGRAM 2
+
+import java.util.Scanner;
+public class UserCounter {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the total number of users in the college: ");
+        int totalUsers = input.nextInt();
+        System.out.print("Enter the number of staff users: ");
+        int staffUsers = input.nextInt();
+        int nonTeachingStaff = staffUsers / 3;
+        int studentUsers = totalUsers - staffUsers - nonTeachingStaff;
+        System.out.println("Number of Student Users: " + studentUsers);
+        System.out.println("Number of Staff Users: " + staffUsers);
+        System.out.println("Number of Non-Teaching Staff Users: " + nonTeachingStaff);
+        input.close();
+    }
+}
+
+
+PROGRAM 3
+
+import java.util.Scanner;
+public class FactorCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+        int countFactors = 0;
+        System.out.print("Factors of " + number + ": ");
+        for (int i = 1; i <= number; i++) {
+            if (number % i == 0) {
+                countFactors++;
+                System.out.print(i + " ");
+            }
+        }
+        System.out.println("\nTotal number of factors: " + countFactors);
+        System.out.print("Enter the Nth factor to find: ");
+        int nthFactor = scanner.nextInt();
+        int factorCount = 0;
+        for (int i = 1; i <= number; i++) {
+            if (number % i == 0) {
+                factorCount++;
+                if (factorCount == nthFactor) {
+                    System.out.println("The " + nthFactor + "th factor is: " + i);
+                    break;
+                }
+            }
+        }
+    }
+}
+
+
+PROGRAM 4
+
+public class PrimeNumbers {
+    public static void main(String[] args) {
+        int n = 3;
+        int count = 0;
+        int num = 2;
+        while (count < n) {
+            boolean isPrime = true;
+            for (int i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime) {
+                count++;
+            }
+            num++;
+        }
+        System.out.println(n + "rd Prime number is " + --num);
+        int primeCount = 0;
+        int nextNum = num + 1;
+        System.out.print(n + " prime numbers after " + num + " are: ");
+        while (primeCount < n) {
+            boolean isPrime = true;
+            for (int i = 2; i <= Math.sqrt(nextNum); i++) {
+                if (nextNum % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime) {
+                System.out.print(nextNum + ", ");
+                primeCount++;
+            }
+            nextNum++;
+        }
+    }
+}
