@@ -1,0 +1,211 @@
+QUESTION 1
+
+class ParentClass {
+    void even() {
+        System.out.println("Parent Class Even Method:");
+        for (int i = 1; i <= 20; i++) {
+            if (i % 2 == 0) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.println("\n");
+    }
+    void odd() {
+        System.out.println("Parent Class Odd Method:");
+        for (int i = 1; i <= 20; i++) {
+            if (i % 2 != 0) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.println("\n");
+    }
+    void prime() {
+        System.out.println("Parent Class Prime Method:");
+        for (int i = 1; i <= 20; i++) {
+            if (isPrime(i)) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.println("\n");
+    }
+    boolean isPrime(int num) {
+        if (num <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+class ChildClass extends ParentClass {
+    void even() {
+        System.out.println("Child Class Even Method:");
+        for (int i = 1; i <= 30; i++) {
+            if (i % 2 == 0) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.println("\n");
+    }
+    void odd() {
+        System.out.println("Child Class Odd Method:");
+        for (int i = 1; i <= 30; i++) {
+            if (i % 2 != 0) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.println("\n");
+    
+    void prime() {
+        System.out.println("Child Class Prime Method:");
+        for (int i = 1; i <= 30; i++) {
+            if (isPrime(i)) {
+                System.out.print(i + " ");
+            }
+        }
+        System.out.println("\n");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        ChildClass obj = new ChildClass();
+        obj.even();
+        obj.odd();
+        obj.prime();
+    }
+}
+
+
+QUESTION 2
+
+class MyClass {
+    private int a;
+    private int b;
+    public MyClass() {
+        this.a = 10;
+        this.b = 15;
+    }
+    public MyClass(int a, int b) {
+        this.a = a;
+        this.b = b;
+    }
+    public void disp() {
+        System.out.println("Value of a: " + a);
+        System.out.println("Value of b: " + b);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        MyClass obj1 = new MyClass();
+        System.out.println("Using Default Constructor:");
+        obj1.disp();
+        MyClass obj2 = new MyClass(20, 25);
+        System.out.println("Using Parameterized Constructor:");
+        obj2.disp(); // Display values of a and b using parameterized constructor
+    }
+}
+
+
+QUESTION 3
+
+class Base {
+    public void area(int a, int b) {
+        System.out.println("Area of Square: " + (a * a));
+    }
+}
+class Derived extends Base {
+    @Override
+    public void area(int a, int b) {
+        System.out.println("Area of Rectangle: " + (a * b));
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Base base = new Base();
+        base.area(5, 5);
+        Derived derived = new Derived();
+        derived.area(4, 6); 
+    }
+}
+
+
+QUESTION 4
+
+a.
+public int sum(int a, int b) {
+    return a + b;
+}
+
+public int sum(int a, int b, int c) {
+    return a + b + c;
+}
+
+b.
+public int sum(int a, int b) {
+    return a + b;
+}
+
+public double sum(double a, double b) {
+    return a + b;
+}
+
+c.
+public int sum(int a, int b) {
+    return a + b;
+}
+
+public int sum(int b, int a) {
+    return a + b;
+}
+
+
+QUESTION 5
+
+interface Tree {
+    void fruits(String fruit1, String fruit2); // Method with 2 parameters
+    void leaves(String leaf1, String leaf2, String leaf3); // Method with 3 parameters
+    void flowers(String flower1, String flower2, String flower3, String flower4); // Method with 4 parameters
+}
+class Branch1 implements Tree {
+    @Override
+    public void fruits(String fruit1, String fruit2) {
+        System.out.println("Branch1 Fruits: " + fruit1 + ", " + fruit2);
+    }
+    @Override
+    public void leaves(String leaf1, String leaf2, String leaf3) {
+        System.out.println("Branch1 Leaves: " + leaf1 + ", " + leaf2 + ", " + leaf3);
+    }
+    @Override
+    public void flowers(String flower1, String flower2, String flower3, String flower4) {
+        System.out.println("Branch1 Flowers: " + flower1 + ", " + flower2 + ", " + flower3 + ", " + flower4);
+    }
+}
+class Branch2 implements Tree {
+    @Override
+    public void fruits(String fruit1, String fruit2) {
+        System.out.println("Branch2 Fruits: " + fruit1 + ", " + fruit2);
+    }
+    @Override
+    public void leaves(String leaf1, String leaf2, String leaf3) {
+        System.out.println("Branch2 Leaves: " + leaf1 + ", " + leaf2 + ", " + leaf3);
+    }
+    @Override
+    public void flowers(String flower1, String flower2, String flower3, String flower4) {
+        System.out.println("Branch2 Flowers: " + flower1 + ", " + flower2 + ", " + flower3 + ", " + flower4);
+    }
+}
+public class TreeTest {
+    public static void main(String[] args) {
+        Tree branch1 = new Branch1();
+        Tree branch2 = new Branch2();
+        branch1.fruits("Apple", "Banana");
+        branch1.leaves("Maple", "Oak", "Birch");
+        branch1.flowers("Rose", "Tulip", "Daisy", "Lily");
+        branch2.fruits("Orange", "Grapes");
+        branch2.leaves("Pine", "Cedar", "Spruce");
+        branch2.flowers("Sunflower", "Daffodil", "Chrysanthemum", "Marigold");
+    }
+}
