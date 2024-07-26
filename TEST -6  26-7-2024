@@ -1,0 +1,51 @@
+QUESTION 3
+
+class Base {
+    public void area(int a, int b) {
+        System.out.println("Area of Square: " + (a * a));
+    }
+}
+class Derived extends Base {
+    @Override
+    public void area(int a, int b) {
+        System.out.println("Area of Rectangle: " + (a * b));
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Base base = new Base();
+        base.area(5, 5);
+        Derived derived = new Derived();
+        derived.area(4, 6); 
+    }
+}
+
+
+QUESTION 4
+
+a.
+public int sum(int a, int b) {
+    return a + b;
+}
+
+public int sum(int a, int b, int c) {
+    return a + b + c;
+}
+
+b.
+public int sum(int a, int b) {
+    return a + b;
+}
+
+public double sum(double a, double b) {
+    return a + b;
+}
+
+c.
+public int sum(int a, int b) {
+    return a + b;
+}
+
+public int sum(int b, int a) {
+    return a + b;
+}
